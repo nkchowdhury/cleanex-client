@@ -1,0 +1,32 @@
+.header-btn{
+    background:#357e98;
+    color:white;
+    border:none;
+    font-size:18px;
+    padding:10px 15px;
+    
+    border-radius:8px;
+}
+
+.header-btn:hover{
+    background:#87cbeb;
+   
+}
+.main-navbar{
+
+}
+
+.nab-item{
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight:400;
+      
+}
+.nab-item:hover{
+    text-decoration: none;
+    color:#06691d;
+   
+      
+}
+

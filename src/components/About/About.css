@@ -1,0 +1,13 @@
+.about-tittle {
+    margin-top:80px;
+    margin-bottom:50px;
+}
+.btn-about{
+    background-color: #11b4f5;
+    border: none;
+    font-size:18;
+    color: #ffff;
+    border-radius: 2px;
+    padding: 10px 15px;
+
+}
