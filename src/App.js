@@ -23,6 +23,10 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import OrderList from './components/Dashboard/OrderList/OrderList'
 import OrderDetails from './components/OrderDetails/OrderDetails'
+import AddServices from './components/AddServices/AddServices';
+import AddAdmin from './components/Admin/AddAdmin/AddAdmin';
+import AllOrder from './components/Admin/AllOrder/AllOrder'
+import ManageService from './components/Admin/ManageService/ManageService'
 
 library.add(fab, faCheckSquare, faCoffee)
 
@@ -67,6 +71,54 @@ const [signInUser, setSignInUser] = useState({});
         <Login></Login>
 
     </Route>
+
+    <PrivateRoute path="/admin">
+       <Admin></Admin>
+
+    </PrivateRoute>
+
+
+    <PrivateRoute path="/addService">
+
+           <Admin tittle="Add Service">
+                   <AddServices></AddServices>
+           </Admin>
+
+    </PrivateRoute>
+
+
+    <PrivateRoute path="/manage">
+
+         <Admin tittle="Manage Service">
+
+         <ManageService></ManageService>
+  
+        </Admin>
+
+    </PrivateRoute>
+
+
+    <PrivateRoute path="/adminOrderList">
+
+          <Admin tittle="All Order List">
+
+          <AllOrder></AllOrder>
+  
+          </Admin>
+
+    </PrivateRoute>
+
+
+
+    <PrivateRoute path="/addAdmin">
+
+         <Admin tittle="Add Admin">
+
+         <AddAdmin></AddAdmin>
+  
+         </Admin>
+
+    </PrivateRoute>
      
 
    
