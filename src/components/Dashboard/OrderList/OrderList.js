@@ -2,29 +2,38 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 
 const OrderList = () => {
-
-   const [ signInUser, setSignInUser]= useContext(UserContext)
+    
+   
+   const [ signInUser, setSignInUser]= useContext(UserContext);
 
    const [order,setOrder] = useState([]);
 
     const [addedOrder,setAddedOrder]=useState(false)
 
 
+
+
     useEffect(() => {
-        
-         
-        fetch(`http://localhost:4044/orders?email=` + signInUser.email)
+
+        fetch('https://murmuring-mesa-47382.herokuapp.com?email=' +signInUser.email)
         .then(res => res.json())
-        .then(data =>  {
+        .then (data => console.log("fetch data", data))
+        // .then(data => {
 
-            if(data){
-                  setAddedOrder(data)
-              }
-              setOrder(data)
-              })
+        //     if(data){
+        //         setAddedOrder(data)
+                
+        //     }
 
 
-  },[addedOrder])
+        //     setOrder(data)
+        // })
+
+
+    },[addedOrder])
+
+
+
 
 
 
@@ -33,7 +42,8 @@ const OrderList = () => {
     return (
         <div>
 
-          <h1>{order.tittle}</h1>
+          <h1> You've placed {order.length} order</h1>
+          <h1> {signInUser.name}</h1>
             
         </div>
     );

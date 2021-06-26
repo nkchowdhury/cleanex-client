@@ -25,7 +25,7 @@ const AddServices = () => {
     // const url = `http://localhost:4044/addService`
     console.log(servicesData);
 
-    fetch('http://localhost:4044/addService', {
+    fetch('https://murmuring-mesa-47382.herokuapp.com/addService', {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -42,30 +42,6 @@ const AddServices = () => {
   };
 
 
-
-
-//   const onSubmit = data => {
-//     const ProductData = {
-//         Price: data.Price,
-//         Product: data.Product,
-//         photoURL: photoURL
-//     }
-//     const url = `https://ancient-journey-25736.herokuapp.com/addProduct`
-//     // console.log(ProductData);
-//     fetch(url, {
-//         method: 'POST',
-//         headers: {
-//             'Content-type': 'application/json'
-//         },
-//         body: JSON.stringify(ProductData)
-//     })
-//         .then(res => res.json())
-//         .then(data => {
-//             if (data) {
-//                 alert('Product added successfully');
-//             }
-//         })
-// }
 
 
 

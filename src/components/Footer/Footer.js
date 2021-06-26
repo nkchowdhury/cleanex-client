@@ -1,7 +1,16 @@
 import React from 'react';
 import './Footer.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook,faTwitter,faInstragram,faCcVisa,faCcMastercard,faCcAmex,faCcDiscover } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {
+  
+//   faShoppingCart,
+//   faHdd,
+//   faCommentAlt,
+//   faPlus,
+//   faUserPlus,
+//   faSignOutAlt,
+// } from '@fortawesome/free-solid-svg-icons';
+import { faGithub,faFacebook,faTwitter, faInstagramSquare, faYoutube, faFacebookSquare, faCcVisa, faCcMastercard, faCcPaypal, faCcAmex, faCcDiscover } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
     return (
@@ -15,23 +24,27 @@ const Footer = () => {
      <h5>Cleanex</h5>
      <p className="text-secondary">Cleanex psum dolor sit amet consectetur adipisicing elit.Dolore explicabo quidem error,fuga impedit autem!</p>
      <h5>Follow us on social</h5>
-     <ul>
+    
         
-         {/* <li style={{listStyle:"none"}}>  <FontAwesomeIcon icon={faFacebook} />  </li> */}
+        
+         <FontAwesomeIcon  className="social-icon" icon={faFacebookSquare} />
+         <FontAwesomeIcon className="social-icon"  icon={faTwitter} />
+         <FontAwesomeIcon className="social-icon"  icon={faInstagramSquare} />
+         <FontAwesomeIcon className="social-icon" icon={faYoutube} />
+         
        
-     </ul>
-     
+    
 
      </div>
      <div className="col-md-2">
      <h5 className="quick-menu">Quick Menu</h5>
-     <ul>
+   
          <li style={{listStyle:"none"}}><a href="#">Home</a></li>
          <li style={{listStyle:"none"}}><a href="#">About</a></li>
          <li style={{listStyle:"none"}}><a href="#">Contct</a></li>
          <li style={{listStyle:"none"}}><a href="#">Review</a></li>
          <li style={{listStyle:"none"}}><a href="#">blog</a></li>
-     </ul>
+    
 
 
      </div>
@@ -53,11 +66,13 @@ const Footer = () => {
       <button className="btn-subs" type="submit">Subscribe</button>
 
 
-      <h5 className="mt-4">We accept this card</h5>
+      <h5 className="mt-4">We accept</h5>
 
-      <u>
-          
-      </u>
+      <FontAwesomeIcon  className="credit-icon" icon={faCcVisa} />
+      <FontAwesomeIcon className="credit-icon" icon={faCcMastercard} />
+      <FontAwesomeIcon className="credit-icon" icon={faCcPaypal} />
+      <FontAwesomeIcon className="credit-icon" icon={faCcAmex} />
+      <FontAwesomeIcon className="credit-icon" icon={faCcDiscover} />
 
 
 

@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import './Dashboard.css'
 
 const Dashboard = (props) => {
 
-    console.log(props)
+    console.log('props' , props);
 
 const [ signInUser, setSignInUser]= useContext(UserContext);
 
@@ -25,7 +26,7 @@ return (
         </div>
       </div>
       <div className='row bg-white'>
-        <div className='col-md-2 sidebar-pages'>
+        <div className='col-md-2 sidebar-part'>
           <Sidebar />
         </div>
         <div className='col-md-10'>

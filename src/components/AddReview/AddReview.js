@@ -29,7 +29,7 @@ const AddReview = () => {
         // const url = `http://localhost:4044/reviews`
         console.log(servicesData);
     
-        fetch('http://localhost:4044/reviews' , {
+        fetch('https://murmuring-mesa-47382.herokuapp.com/reviews' , {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -78,8 +78,10 @@ const AddReview = () => {
 <h3>Review</h3>
 
 <form onSubmit={handleSubmit(onSubmit)}>
-  <label htmlFor="name">Name</label>
+
+  <label for="formGroupExampleInput" class="form-label mt-2">Name</label>
   <input
+    class="form-control col-md-4"
     type="text"
     name="name"
     defaultValue={signInUser.userName}
@@ -87,35 +89,40 @@ const AddReview = () => {
     {...register("name")}
   />
 
-  <br />
-  <br />
+  
 
-  <label htmlFor="company">Your Company</label>
+  
+  <label for="formGroupExampleInput" class="form-label mt-2">Your Company</label>
   <input
+    class="form-control col-md-4"
     type="text"
     name="company"
     placeholder="Your Company"
     {...register("company")}
   />
 
-  <br />
-  <br />
+ 
 
 
 
-  <label htmlFor="description">Description</label>
+ 
+  
+  <label for="formGroupExampleInput" class="form-label mt-2">Description</label>
   <input
+   class="form-control col-md-4"
     type="text"
     name="description"
     placeholder="description"
     {...register("description")}
   />
-  <br />
-  <br />
-  <input type="File" name="file" onChange={handleImgUrlUpload} />
-  <br />
-  <br />
-  <button className="btn review" type="submit">Add Review</button>
+  
+  <input type="File" class="form-control col-md-4 mt-3" name="file" onChange={handleImgUrlUpload} />
+
+  {/* <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input  onChange={handleImgUrlUpload}  type="file" class="form-control" id="inputGroupFile01">Upload</input> */}
+ 
+  <button style={{marginTop:"10px"}} type="submit" class="btn btn-info">Add Review</button>
+  
 </form>
             
         </div>

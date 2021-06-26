@@ -4,6 +4,8 @@
     line-height: 20px;
     margin-right:8px;
     padding-left: 12px;
+    background-color: rgb(207, 204, 204);
+    border: none;
 }
 
 .btn-subs{
@@ -13,10 +15,17 @@
     padding-left:10px;
     padding-right:10px;
     background-color: transparent;
-    
-    color:#11b4f5;
+    border:none;
+    color:white;
+    background-color:#11b4f5;
     font-weight: 500;
-    border:1px solid #11b4f5;
+    
+
+}
+
+.btn-subs:hover{
+
+    border:1px solid #21ade4;
 
 }
 footer{
@@ -39,8 +48,30 @@ h5{
 
 .footer-spain{
     width: 100%;
-    height:1px;
+    height:0.5px;
     display: inline-block;
-    background: lightgray;
+    background: rgb(143, 142, 142);
     
+}
+
+.social-icon{
+    color:rgb(112, 111, 111);
+    font-size:30px;
+    margin:5px;
+}
+.social-icon:hover{
+    color: beige;
+    font-size:30px;
+    margin:5px;
+}
+
+.credit-icon{
+    color:rgb(112, 111, 111);
+    font-size:30px;
+    margin:5px;
+}
+.credit-icon:hover{
+    color: beige;
+    font-size:30px;
+    margin:5px;
 }

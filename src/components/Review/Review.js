@@ -45,7 +45,7 @@ const Review = () => {
    
    useEffect(() => {
 
-    fetch('http://localhost:4044/review')
+    fetch('https://murmuring-mesa-47382.herokuapp.com/review')
     .then(res => res.json())
     .then(data => setReview(data))
 

@@ -16,12 +16,13 @@ import { createContext, useState } from 'react';
 import Dashboard from './components/Dashboard/Dashboard';
 import PlaceOrder from './components/Dashboard/PlaceOrder/PlaceOrder';
 import AddReview from './components/AddReview/AddReview';
-import OrderList from './components/Dashboard/OrderList/OrderList';
 import NoOrder from './components/Dashboard/NoOrder/NoOrder'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import OrderList from './components/Dashboard/OrderList/OrderList'
+import OrderDetails from './components/OrderDetails/OrderDetails'
 
 library.add(fab, faCheckSquare, faCoffee)
 
@@ -41,7 +42,7 @@ const [signInUser, setSignInUser] = useState({});
 
 
 
-    <UserContext.Provider value={[signInUser, setSignInUser]}>
+  <UserContext.Provider value={[signInUser, setSignInUser]}>
     
     
     {/* <h1>email: {signInUser.userName}</h1>  */}
@@ -66,6 +67,16 @@ const [signInUser, setSignInUser] = useState({});
         <Login></Login>
 
     </Route>
+     
+
+   
+
+    <PrivateRoute path="/orderDetails">
+    <Dashboard>
+    <OrderDetails></OrderDetails>
+    </Dashboard> 
+
+    </PrivateRoute>
 
     <PrivateRoute path="/order">
     <Dashboard>
@@ -83,14 +94,16 @@ const [signInUser, setSignInUser] = useState({});
     </PrivateRoute>
 
 
-    <PrivateRoute path="/orderList">
-        <Dashboard title="Order List">
-          <OrderList></OrderList>
+    
+   <PrivateRoute path="/orderList">
+        <Dashboard tittle="orderList">
+
+        <OrderList></OrderList>
+         
         </Dashboard>
-       
     </PrivateRoute>
 
-    
+
 
     <PrivateRoute path="/review">
          <Dashboard tittle="Review">

@@ -4,6 +4,7 @@ import { UserContext } from '../../../App';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
+import ProcessPayment from '../../ProcessPayment/ProcessPayment';
 
 
 const PlaceOrder = () => {
@@ -30,7 +31,7 @@ const PlaceOrder = () => {
     
 
   useEffect(() => {
-    fetch('http://localhost:4044/service/')
+    fetch('https://murmuring-mesa-47382.herokuapp.com/service/')
         .then(res => res.json())
         .then(data => {
             //console.log(data);
@@ -50,10 +51,10 @@ const PlaceOrder = () => {
 
 
 
-// let history = useHistory();
-// function handleClientService() {
-//   history.push('/dashboard');
-// }
+let history = useHistory();
+function handleClientService() {
+  history.push('/OrderDetails');
+}
 
 
 
@@ -78,7 +79,7 @@ const onSubmit = () => {
    
     console.log('orderInfo' ,orderInfo)
    
-    fetch('http://localhost:4044/addOrder', {
+    fetch('https://murmuring-mesa-47382.herokuapp.com/addOrder', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(orderInfo),
@@ -89,7 +90,7 @@ const onSubmit = () => {
             
             console.log("Fetch data", data)
             alert('Order Place successfully');
-        //   handleClientService();
+          handleClientService();
         }
       });
   };
@@ -111,12 +112,19 @@ return (
 
         <div className="container">
        
-                  <h3>Your {_id} </h3>
+                  <h3>Your Order Details </h3>
 
 
- <form onSubmit={handleSubmit(onSubmit)}>
+ <form  onSubmit={handleSubmit(onSubmit)}>
+
+
+
+
+      
+        <label for="formGroupExampleInput" class="form-label mt-2">Name</label>
       
         <input
+          class="form-control col-md-6"
           type="text"
           tittle="name"
           defaultValue={signInUser.userName}
@@ -124,10 +132,10 @@ return (
           {...register("name")}
         />
 
-        <br />
-        <br />
-        
+      
+        <label for="formGroupExampleInput" class="form-label mt-2">Email</label>
         <input 
+          class="form-control col-md-6"
           type="email"
           defaultValue={signInUser.email}
           tittle="email"
@@ -135,30 +143,42 @@ return (
           {...register("email")}
         />
        
-        <br />
-        <br />
+   
+
+       <label for="formGroupExampleInput" class="form-label mt-2">Service Tittle</label>
 
         <input
+
+          class="form-control col-md-6"
           type="text"
           defaultValue={tittle}
           tittle="tittle"
           placeholder="tittle"
           {...register("tittle")}
         />
-         <br />
-        <br />
-
+         
+        
+         <label for="formGroupExampleInput" class="form-label mt-2">Price (US-$)</label>
         <input
-          type="number"
-          defaultValue={price}
+          class="form-control col-md-6"
+          type="price"
+          defaultValue={"$",price}
           tittle="price"
           placeholder="price"
           {...register("price")}
         />
        
-        <br />
-        <br />
-        <button className="btn-pay" type="submit">Pay</button>
+       <br />
+        
+        <div className="col-md-6">
+          
+       <ProcessPayment style={{marginTop:"13px"}} ></ProcessPayment>
+        </div>
+
+       <br />
+
+       <button style={{marginTop:"10px"}} type="submit" class="btn btn-info">Pay Now</button>
+       
     </form>
 
 
