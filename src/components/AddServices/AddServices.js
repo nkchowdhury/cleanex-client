@@ -67,44 +67,47 @@ const AddServices = () => {
       });
   };
 
+
+
   return (
     <div className="container">
       <h3>Add Services</h3>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="tittle">Service tittle</label>
+      <label for="formGroupExampleInput" class="form-label mt-2">Service tittle</label>
         <input
+           class="form-control col-md-6"
           type="text"
           tittle="tittle"
           placeholder="Service tittle"
           {...register("tittle")}
         />
 
-        <br />
-        <br />
-        <label htmlFor="price">Price</label>
+    
+        <label for="formGroupExampleInput" class="form-label mt-2">Service tittle</label>
         <input
+         class="form-control col-md-6"
           type="text"
           tittle="price"
           placeholder="Service price"
           {...register("price")}
         />
 
-        <br />
-        <br />
-        <label htmlFor="description">Description</label>
+
+      
+        <label for="formGroupExampleInput" class="form-label mt-2">Service tittle</label>
         <input
+           class="form-control col-md-6"
           type="text"
           tittle="description"
           placeholder="description"
           {...register("description")}
         />
-        <br />
-        <br />
-        <input type="File" tittle="file" onChange={handleiconUrlUpload} />
-        <br />
-        <br />
-        <button type="submit">Add Service</button>
+       
+        <input type="File" class="form-control col-md-4 mt-3" name="file"  tittle="file" onChange={handleiconUrlUpload}  />
+      
+        <button style={{marginTop:"10px"}} type="submit" class="btn btn-info">Add Service</button>
+        
       </form>
     </div>
   );
